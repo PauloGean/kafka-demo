@@ -1,0 +1,13 @@
+https://emmanuelneri.com.br/2019/06/04/kafka-no-spring-boot/
+
+https://medium.com/trainingcenter/apache-kafka-codifica%C3%A7%C3%A3o-na-pratica-9c6a4142a08f
+
+Criar topico
+
+docker-compose exec kafka  \
+kafka-topics --create --topic meu-topico-legal --partitions 1 --replication-factor 1 --if-not-exists --zookeeper zookeeper:2181
+
+confirmar topico
+
+docker-compose exec kafka  \
+  kafka-topics --describe --topic meu-topico-legal --zookeeper zookeeper:2181
