@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @Component
 public class OrderProducer {
-	 @Value("${order.topic}")
+	    @Value("${order.topic}")
 	    private String orderTopic;
 	 
 	    private final KafkaTemplate kafkaTemplate;
