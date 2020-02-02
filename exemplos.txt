@@ -11,3 +11,16 @@ confirmar topico
 
 docker-compose exec kafka  \
   kafka-topics --describe --topic meu-topico-legal --zookeeper zookeeper:2181
+
+
+produzir mensagem
+
+docker-compose exec kafka  \
+  bash -c "seq 100 | kafka-console-producer --request-required-acks 1 --broker-list localhost:29092 --topic meu-topico-legal && echo 'Produced 100 messages.'"
+
+
+
+consumindo mensagem
+
+docker-compose exec kafka  \
+  kafka-console-consumer --bootstrap-server localhost:29092 --topic meu-topico-legal --from-beginning --max-messages 100
